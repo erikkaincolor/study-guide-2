@@ -2,52 +2,66 @@
 Dictionaries
 
     Why are dictionaries necessary? Why not use a list?
-dictonaries are to store data with key values, they hold sets in a categorical way, the values can be data structures
+-dictonaries are to store data with key values, they hold sets in a categorical way, the values can be data structures, dont have to rmbr position 
+-can access values with KEYS instead of INDEX
     How is the lookup time in a dictionary different from that of a list?
-??
+-with dictionaries you can access exactly what you need with the key, so its faster and direct
     How do you create an empty dictionary? How do you create a dictionary with initial content?
 you append items to it in a for loop 
     How do you add a new key/value pair to a dictionary? How do you update the value of a key in a dictionary?
 you iterate inside the dictonary by index and append it to the dictionary 
     How do you remove a key/value pair from a dictionary?
-
+via the dleete keyword. >>> del animals['rabbit']
     How do you look up the value for a given key in a dictionary?
-
+>>>animals["date"]=
+    
     How do you iterate over a dictionary?
-
+    
+    -for animal in animals 
+    -for loop through i which will be the keys? 
+    - "Iterating over dictionaries gets each key"
+        
         Print keys?
-
+    for animal in animals:
+        print(animal) <----print key
+        
         Print values?
+    for animal in animals:
+        print (animals[animal]) <---print value
 
         Print keys and values?
 
     What is a KeyError? When does one occur?
+Attempting to index into a dictionary with a nonexistant key results in a KeyError
+    
+    Dictionary methods to know: <----AN API..https://www.w3schools.com/PYTHON/python_dictionaries_methods.asp
 
-    Dictionary methods to know:
+        .get()<-----takes a key as a arg....returns the value of the key in the parenthesis; "dict.get("key")"<-----
 
-        .get()
+        .values()<-----no arg....returns a new view of the dictionarys keys; "dict.values()"<---can b a for loop 
 
-        .values()
-
-        .items()
+        .items()<------no arg.....returns dicts items, the key:value pairs; "dict.items()" <---can b a for loop
 
     How do you access a dictionary within a dictionary?
-
+^^nested dictionaries
+-Create three dictionaries, then create one dictionary that will contain the other three dictionaries:
+-dict[dict]
     When should you use a dictionary?
-
+when you want to access something quick
 Python Tools
 
     What are some characteristics of Python as compared to other programming languages?
-
+-easy, pretty,english seeming 
     What are .pyc files? What is their purpose?
-
+-. py files contain the source code of a program. Whereas, . pyc file contains the bytecode of your program.
     What’s the difference between the commands python3 mygame.py and python3 -i mygame.py?
-
+-one is the python console and the other is the interactive python console??
+    
     Built-in Python functions to know:
 
-        dir()
+        dir() <----Display the content of an object...."dir(class_name)"...Lists out all the obtainable attributes for module, lists, and dictionaries
 
-        help()
+        help() <-----help() <----Executes the built-in help system
 
     Why does code style matter?
 
@@ -64,11 +78,11 @@ Python Tools
         Docstrings and comments
 
     What is sys.argv? What happens if you print it out?
-
+^^^sys is a library package. 
 Markov Chains
 
     In the context of Markov chains, what is a bigram? What’s an n-gram?
-
+bigram is two bc of bi, and n-is whatever numbers
     How could you use dictionaries to structure a bigram markov chain implementation?
 
 Shell
@@ -102,39 +116,42 @@ Shell
         sort <some file name>
 
         grep <term> <some file name>
+^^^GREP is a useful command-line tool that lets us use regular expressions to search plain text files for specified lines. 
+In Python, regular expressions (RE) are commonly used to determine whether a string matches a specific pattern
+^^50x faster than python
 
         Using * to file name glob
-
+???
         env
-
+coding ina n environemnt using environemtn specific variables...
         echo $PATH
-
+??
         which python
-
+???
         export SOME_VARIABLE='some value'
-
+???
     What is STDIN? How do you capture it using Python?
-
+standard libray
     What is STDOUT? How do you push to it using Python?
-
+stand lib output to console
     What is STDERR?
-
+standard error
     How do you redirect the output of one shell command to a file?
-
+move command
     How do you redirect the output of one shell command and append it to a file?
-
+reassignemnt?
     How do you redirect the content of a file as input to an interactive Python script?
-
+???
     How do you redirect the output of one shell command to the input of another?
-
+variable assignemnt
     What is the shell environment?
-
+env, its a closed circucit party
     What is the $PATH environment variable? What role does it play on the command line?
-
+???
     How can you access the shell environment in Python?
-
+$ virtualenv env
     How do you set environment variables using a .sh file?
-
+????
 Python Projects
 
     What is a Python module?
@@ -142,15 +159,19 @@ Python Projects
     What is a namespace?
 
     What are the 3 ways to import something in Python?
-
+import c 
+import c file c <-???
+???
     Why is from some_module import * not a good practice?
-
+imports one singular thing
     When should you import a whole library versus only one function, class, etc.?
-
+when using multiple
     What does if __name__ == "__main__" ask? When should you include this check at the bottom of your file?
-
+dunder!!! test files ???
     Where are the three places that you can import things from?
-
+std library
+another script??
+classes?
     What is pip?
 
     What is a virtual environment? How is that different than a virtual machine?
@@ -166,34 +187,36 @@ Python Projects
 Classes
 
     How are classes different than dictionaries in terms of structure, flexibility, and data storage?
-
+classes are objects that hold all sorts of identifying info, and functions (their methods)
     What is the relationship between a class and an instance?
-
+an instance is 1 instantiaction of a class object.....if the class is people, the instances would be sarah, erikka, taylor etc
     What is instantiation?
-
+when u bring a class object to life.
     What are attributes? How do you define an attribute at the class level (to be shared by all instances)? How do you set a new attribute on an instance? How can you update the value of an attribute on an instance?
-
+the data in the class, in the dunder...a function....another function
     What is a method? How do you define a method on a class? How do you call a method?
-
+a function in a class, 
     What are the key differences between functions and methods?
-
+functions can apply to anything
     What is initialization? How is it different than instantiation?
-
+????
     What is __init__? When does it get called?
-
+dunder! it gets called when a instance is created
     What is encapsulation? What is abstraction? What is polymorphism?
-
+?
+?
+?
     What is inheritance? When is it appropriate for one class to inherit attributes and/or methods from another?
-
+child and parent classes, superclasses 
     What are the various ways in which a child class can modify methods and attributes from a parent class?
-
+??
         What is super()?
-
+??
     What’s an example of violating polymorphism? What’s an example of enforcing polymorphism?
-
+??
     When overriding parent methods, what is the only method that is normal to require different arguments than the parent method?
-
+??
     What is an abstract class? What makes it different than a typical class?
-
+abstract classes are classes that 
     When there are methods that don’t directly map to an existing hierarchy, how can you continue to pursue encapsulation? (i.e. avoid copying the same method on several classes)
 
