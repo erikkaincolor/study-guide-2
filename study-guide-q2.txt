@@ -2,13 +2,13 @@
 Dictionaries
 
     Why are dictionaries necessary? Why not use a list?
-
+dictonaries are to store data with key values, they hold sets in a categorical way, the values can be data structures
     How is the lookup time in a dictionary different from that of a list?
-
+??
     How do you create an empty dictionary? How do you create a dictionary with initial content?
-
+you append items to it in a for loop 
     How do you add a new key/value pair to a dictionary? How do you update the value of a key in a dictionary?
-
+you iterate inside the dictonary by index and append it to the dictionary 
     How do you remove a key/value pair from a dictionary?
 
     How do you look up the value for a given key in a dictionary?
