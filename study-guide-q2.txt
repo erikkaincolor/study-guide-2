@@ -7,9 +7,9 @@ Dictionaries
     How is the lookup time in a dictionary different from that of a list?
 -with dictionaries you can access exactly what you need with the key, so its faster and direct
     How do you create an empty dictionary? How do you create a dictionary with initial content?
-you append items to it in a for loop 
+you initialize it"". you assign keys to it "dict['names']= 2" or "dict[i]=input_items" in a for loop or for multiples you load values to it in a for loop 
     How do you add a new key/value pair to a dictionary? How do you update the value of a key in a dictionary?
-you iterate inside the dictonary by index and append it to the dictionary 
+you iterate inside the dictonary by key  
     How do you remove a key/value pair from a dictionary?
 via the dleete keyword. >>> del animals['rabbit']
     How do you look up the value for a given key in a dictionary?
@@ -49,7 +49,7 @@ Attempting to index into a dictionary with a nonexistant key results in a KeyErr
     When should you use a dictionary?
 when you want to access something quick
 Python Tools
-
+----
     What are some characteristics of Python as compared to other programming languages?
 -easy, pretty,english seeming 
     What are .pyc files? What is their purpose?
