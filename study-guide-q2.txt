@@ -7,29 +7,39 @@ Dictionaries
     How is the lookup time in a dictionary different from that of a list?
 -with dictionaries you can access exactly what you need with the key, so its faster and direct
     How do you create an empty dictionary? How do you create a dictionary with initial content?
-you initialize it"". you assign keys to it "dict['names']= 2" or "dict[i]=input_items" in a for loop or for multiples you load values to it in a for loop 
+you initialize it "dict={}" OR "dict={key1:[2,2,3,4], key3:1}
     How do you add a new key/value pair to a dictionary? How do you update the value of a key in a dictionary?
-you iterate inside the dictonary by key  
+-If the key exists, the value is updated....."dict['names']= 2"
     How do you remove a key/value pair from a dictionary?
-via the dleete keyword. >>> del animals['rabbit']
+via the delete keyword. >>> del animals['rabbit']
     How do you look up the value for a given key in a dictionary?
 >>>animals["date"]=
     
     How do you iterate over a dictionary?
-    
-    -for animal in animals 
-    -for loop through i which will be the keys? 
+     -for loop through i which will be the keys 
     - "Iterating over dictionaries gets each key"
-        
+animals = {'goat': 6, 'pony': 1, 'duck': 14}
+for animal in animals:
+  print(f"key is {animal}")
+  print (f"value is {animals[animal]}")
+
+
+
+
+
         Print keys?
     for animal in animals:
         print(animal) <----print key
         
         Print values?
     for animal in animals:
-        print (animals[animal]) <---print value
+        print (animals[animal]) <---print value of animals{}
 
         Print keys and values?
+animals = {'goat': 6, 'pony': 1, 'duck': 14}
+for animal in animals:
+  print(f"key is {animal}")
+  print (f"value is {animals[animal]}")
 
     What is a KeyError? When does one occur?
 Attempting to index into a dictionary with a nonexistant key results in a KeyError
@@ -43,23 +53,30 @@ Attempting to index into a dictionary with a nonexistant key results in a KeyErr
         .items()<------no arg.....returns dicts items, the key:value pairs; "dict.items()" <---can b a for loop
 
     How do you access a dictionary within a dictionary?
-^^nested dictionaries
+^^you access a nested dictionary by using 1st key and second key "dict[key1][key2]"
+
 -Create three dictionaries, then create one dictionary that will contain the other three dictionaries:
--dict[dict]
+
+#not resolved
+dict1={dict1key:1}
+dict2={dict2key:11}
+dict3={dict3key:111}
+all_dict={dict1}
+
     When should you use a dictionary?
 when you want to access something quick
 Python Tools
 ----
     What are some characteristics of Python as compared to other programming languages?
--easy, pretty,english seeming 
+-easy, pretty,english seeming , strongly typed
     What are .pyc files? What is their purpose?
 -. py files contain the source code of a program. Whereas, . pyc file contains the bytecode of your program.
     What’s the difference between the commands python3 mygame.py and python3 -i mygame.py?
--one is the python console and the other is the interactive python console??
+-one is the python console and the other is the interactive python console
     
     Built-in Python functions to know:
 
-        dir() <----Display the content of an object...."dir(class_name)"...Lists out all the obtainable attributes for module, lists, and dictionaries
+        dir() <----Display the methods of an object...."dir(class_name)"...Lists out all the obtainable attributes for module, lists, and dictionaries
 
         help() <-----help() <----Executes the built-in help system
 
@@ -199,17 +216,23 @@ a function in a class,
     What are the key differences between functions and methods?
 functions can apply to anything
     What is initialization? How is it different than instantiation?
-????
+A variable is initialized with a value. An object is instantiated when memory is allocated for it and it's constructor has been run
     What is __init__? When does it get called?
-dunder! it gets called when a instance is created
+dunder! it gets called when a instance is instantiated. 
     What is encapsulation? What is abstraction? What is polymorphism?
-?
-?
-?
+
+    Data lives close to its functionality=Encapsulation
+    Don’t need to know info a method uses internally=Abstraction
+    Easy to make different, interchangeable types of class objects=Polymorphism
+
     What is inheritance? When is it appropriate for one class to inherit attributes and/or methods from another?
 child and parent classes, superclasses 
+
     What are the various ways in which a child class can modify methods and attributes from a parent class?
-??
+class Cat(Animal):
+    max_purr_vol = 10
+parent, superclass = animal, subclass of animal = cat....
+
         What is super()?
 ??
     What’s an example of violating polymorphism? What’s an example of enforcing polymorphism?
