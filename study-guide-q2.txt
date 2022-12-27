@@ -61,7 +61,7 @@ Attempting to index into a dictionary with a nonexistant key results in a KeyErr
 dict1={dict1key:1}
 dict2={dict2key:11}
 dict3={dict3key:111}
-all_dict={dict1}
+all_dict={dict1,dict2, dict3}
 
     When should you use a dictionary?
 when you want to access something quick
@@ -80,11 +80,11 @@ Python Tools
 
         help() <-----help() <----Executes the built-in help system
 
-    Why does code style matter?
+    Why does code style matter? readability
 
     Key points of Python style to know
 
-        Tabs vs. Spaces
+        Tabs vs. Spaces 
 
         Line length and how to break lines for readability
 
@@ -101,18 +101,25 @@ Markov Chains
     In the context of Markov chains, what is a bigram? What’s an n-gram?
 bigram is two bc of bi, and n-is whatever numbers
     How could you use dictionaries to structure a bigram markov chain implementation?
+sorting one words and two words and three words
+
+
+
+
+
+
 
 Shell
 
     VS Code shortcuts to know and use:
 
-        CTRL-/ to comment/uncomment
+        CTRL-/ to comment/uncomment 
 
         CTRL-] and CTRL-[ to indent/dedent (or tab and shift + tab)
 
     Shell shortcuts and commands to know and use:
 
-        Tab completion
+        Tab completion <----------------terminal will complete file name 
 
         Up arrow/Down arrow to navigate history
 
@@ -122,18 +129,23 @@ Shell
 
         CTRL-D to delete moving forward
 
-        head <some file name>
+        head <some file name>   <--------------print the top N number of data of lines of the file.
 
-        cat <some file name>
+        cat <some file name>   <---------------CREATE single or multiple files, VIEW content of a file, CONCANTENATE files and REDIRECT output in terminal or files.
 
-        tail <some file name>
+        tail <some file name>   <--------------print the last N number of lines of the file.
 
-        wc <some file name>
+        wc <some file name>   <----------------return the # of lines in a file, the number of characters in a file and the number of words in a file
 
-        sort <some file name>
+        sort <some file name>   <---------------sorting alphabetically, in reverse order, by number, by month, and can also remove duplicates
 
         grep <term> <some file name>
 ^^^GREP is a useful command-line tool that lets us use regular expressions to search plain text files for specified lines. 
+
+
+
+
+
 In Python, regular expressions (RE) are commonly used to determine whether a string matches a specific pattern
 ^^50x faster than python
 
@@ -142,7 +154,7 @@ In Python, regular expressions (RE) are commonly used to determine whether a str
         env
 coding ina n environemnt using environemtn specific variables...
         echo $PATH
-??
+$PATH is a environment variable that is file location-related
         which python
 ???
         export SOME_VARIABLE='some value'
