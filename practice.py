@@ -41,7 +41,7 @@ def without_duplicates(words):
         >>> type(without_duplicates([111111, 2, 33333, 2]))
         <class 'list'>
     """
-
+    new_list=
     return []
 
 

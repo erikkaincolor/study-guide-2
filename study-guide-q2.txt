@@ -154,65 +154,94 @@ In Python, regular expressions (RE) are commonly used to determine whether a str
         env
 coding ina n environemnt using environemtn specific variables...
         echo $PATH
-$PATH is a environment variable that is file location-related
-        which python
-???
+-$PATH is a environment variable that is file location-related
+
+
+PATH is an environment variable used to find programs.
+
+Q: When you run where does the shell look for python3?
+
+>>> echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+The shell will search the PATH value from left to right, 
+and stop when it finds the first path containing the command. 
+If it never finds the command, it will return command not found.
+
+>>>study-guide-week-2 % echo $PATH
+/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/
+3.10/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin
+
+
+
+
+
+
+
+        "which python"
+How to Check Your Python Version^^^
         export SOME_VARIABLE='some value'
 ???
     What is STDIN? How do you capture it using Python?
-standard libray
+standard libray input
     What is STDOUT? How do you push to it using Python?
 stand lib output to console
     What is STDERR?
-standard error
+standard error outout
     How do you redirect the output of one shell command to a file?
 move command
     How do you redirect the output of one shell command and append it to a file?
 reassignemnt?
     How do you redirect the content of a file as input to an interactive Python script?
-???
+change where stdin points to using the < operator....in " python3.7 getdata.py > data.csv " the print statement in getdata.py is writing to data.csv instead of the screen
     How do you redirect the output of one shell command to the input of another?
 variable assignemnt
     What is the shell environment?
 env, its a closed circucit party
     What is the $PATH environment variable? What role does it play on the command line?
-???
+tells u where command is, file-location-wise
     How can you access the shell environment in Python?
 $ virtualenv env
     How do you set environment variables using a .sh file?
-????
+read them into shell using 'source' command
 Python Projects
 
     What is a Python module?
-
+a set of functions that u can use in file by importing
     What is a namespace?
-
+the menu of identifiers available for use in a file 
     What are the 3 ways to import something in Python?
-import c 
-import c file c <-???
-???
+1-import c 
+2-from c import this
+3-from c import *
+
     Why is from some_module import * not a good practice?
 imports one singular thing
     When should you import a whole library versus only one function, class, etc.?
 when using multiple
     What does if __name__ == "__main__" ask? When should you include this check at the bottom of your file?
-dunder!!! test files ???
+-dunder!!! if the name after "python3" is the 
+file thats being run...interactive python....when 
+doing doctests and running server in debug mode 
+-tests running the file directly vs when being importeed into another file 
     Where are the three places that you can import things from?
 std library
-another script??
-classes?
+another script
+classes
     What is pip?
-
+package mgr for python
     What is a virtual environment? How is that different than a virtual machine?
-
+-its what u set up when u want the dependancies to be consistent, goes hand in hand with the requirements.txt file 
+-a virtual machine is literally a machine copy on another machine
     Why are virtual environments necessary?
-
+-dependacnies sake...has version of packages and libraries you used at the time o fmaking the program
     How do you create a virtual environment? How do you activate it?
-
+-run 'virtualenv env' in shell
     What command can you use to view the currently installed Python libraries?
-
+-pip3 freeze
     What should you name the file that has the list of a Python project’s dependencies?
-
+requirements.txt
 Classes
 
     How are classes different than dictionaries in terms of structure, flexibility, and data storage?
@@ -239,19 +268,88 @@ dunder! it gets called when a instance is instantiated.
 
     What is inheritance? When is it appropriate for one class to inherit attributes and/or methods from another?
 child and parent classes, superclasses 
-
+-when a child inherits from a parent class and can use its attributes + its own....via super or by creating there own dunder repr.
     What are the various ways in which a child class can modify methods and attributes from a parent class?
++Like this:
 class Cat(Animal):
     max_purr_vol = 10
 parent, superclass = animal, subclass of animal = cat....
 
-        What is super()?
-??
++ALSO via the dunder repr- This method allows you to define what will appear when you print the object
+class Cat(Animal):
+
+    def greet(self):
+        msg = super().greet()
+        return f"{msg} You seem awesome."
+
+
+
+
+    What is super()?
+Why copy and paste __init__ when we have super?
++like this:
+class Cat(Animal):
+    # (...snippet)
+
+    def __init__(self, name):
+        super().__init__(name, "cat")
+
+
+
     What’s an example of violating polymorphism? What’s an example of enforcing polymorphism?
-??
+1:
+for some_animal in family_animals:
+
+if some_animal.species == "dog":
+    some_animal.speak()
+
+elif some_animal.species == "cat":
+    some_animal.meow()
+
+2:
+having a class method with lots of conditionals
+
+
+
+
+
     When overriding parent methods, what is the only method that is normal to require different arguments than the parent method?
-??
+dunder inits pre-determined attributes 
+
+class Cat(Animal):
+    # (...snippet)
+
+    def __init__(self, name):
+        self.name = name
+        self.species = "cat"
+
+
     What is an abstract class? What makes it different than a typical class?
 abstract classes are classes that 
-    When there are methods that don’t directly map to an existing hierarchy, how can you continue to pursue encapsulation? (i.e. avoid copying the same method on several classes)
+
+    When there are methods that don’t directly map to an existing hierarchy, 
+    how can you continue to pursue encapsulation? (i.e. avoid copying the same 
+    method on several classes)
+
+Data lives close to its functionality, Keeping everything “together”...create some mixins 
+that apply an attribute to all classes!
+
+-A mixin is a class used to supply a feature to its subclasses...different 
+subclasses of Animals (dogs, cats, fish), but i want to add glitter to all their skin, id create
+a mixin called Glitter and add it when creating their instances
+
+To make cats furry and love lasers, Cat can inherit from all 3 superclasses:
+
+class Cat(ChaseLaserMixin, HasFurMixin, Animal):
+    # (...snippet)
+
+class Dog(HasFurMixin, Animal):
+    # (...snippet)
+
+
+class HairlessRobot(ChaseLaserMixin, Animal):
+    # (...snippet)
+
+
+
 
