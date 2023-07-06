@@ -1,4 +1,4 @@
-
+https://fellowship.hackbrightacademy.com/materials/wmt5/homework/study-guide-week-2/
 Dictionaries
 
     Why are dictionaries necessary? Why not use a list?
